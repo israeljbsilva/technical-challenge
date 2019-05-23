@@ -22,6 +22,9 @@ def number_written(number):
 
     start, end = -99999, 99999
     for index in range(start, end + 1):
+        if not number.replace('-', '').isdigit():
+            return jsonify(success=f"Invalid characters '{number}'"), 404
+
         if index == int(number):
             words_in_english = inflect_engine.number_to_words(int(number))
 
