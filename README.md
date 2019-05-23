@@ -8,10 +8,10 @@ docker-compose up
 
 ### Realizar uma solicitação request
 ```bash
-curl -X GET http://127.0.0.1/-9999
+curl -X GET http://127.0.0.1:5000/-9999
 ```
 
-## Swagger UI - Hosted via Docker-compose
+### Swagger UI - Hosted via Docker-compose
 ```
 http://127.0.0.1:5000/swagger/
 ```
