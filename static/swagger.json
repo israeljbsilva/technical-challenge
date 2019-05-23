@@ -1,0 +1,84 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Desafio Técnico",
+    "contact": {
+      "email": "israel.bernardes.silva@gmail.com"
+    },
+    "license": {
+      "name": "",
+      "url": ""
+    }
+  },
+  "servers": [
+    {
+      "url": "/"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Número",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/{numero}": {
+      "parameters": [
+        {
+          "name": "numero",
+          "in": "path",
+          "required": true,
+          "description": "Número que será retornado por extenso",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Número"
+        ],
+        "summary": "Com base em um número passado como parâmetro, retornamos o número por extenso",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "numero",
+            "required": true,
+            "description": "Número de (-99999 a 99999)",
+            "schema": {
+              "$ref": "#/components/schemas/numero"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/components/schemas/NumeroRequest"
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "numero": {
+        "properties": {
+          "numero": {
+            "type": "string"
+          }
+        }
+      },
+      "NumeroRequest": {
+        "type": "object",
+        "properties": {
+          "extenso": {
+            "type": "string",
+            "format": "string"
+          }
+        }
+      }
+    }
+  }
+}
